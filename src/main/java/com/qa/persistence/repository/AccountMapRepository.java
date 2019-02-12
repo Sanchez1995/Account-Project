@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import javax.management.Query;
 
 import com.qa.persistence.domain.Account;
-import com.qa.persistence.domain.Movie;
 import com.qa.util.*;
 
 public class AccountMapRepository implements AccountRepository {
@@ -44,17 +43,22 @@ public class AccountMapRepository implements AccountRepository {
 		return "Account has been updated";
 	}
 
-	public int cycleAccount(Long id, String account, String firstName) {
-		Account aAccount = new Account();
-		aAccount.setFirstName("john");		 
-		id++;
-		accountMap.values().contains(firstName); 
+	public int cycleAccount(String testName) {
 		
-		if (firstName)
+
+		return (int) accountMap.values().stream().filter(n -> n.getFirstName().contentEquals(testName)).count();
 		
+//		if (accountMap.values().contains(firstName)) {
+//
+//		}
 		
-		return util.getGensonForObject(accountMap.values());
-		
+		// if (firstName .equals(firstName)firstName{
+		//
+		// }
+
+		// return util.getGensonForObject(accountMap.values());
+
+
 	}
 
 }
