@@ -1,22 +1,22 @@
 package com.qa.util;
 
-import com.google.gson.Gson;
+import com.owlike.genson.Genson;
 
 public class JSONUtil {
 
-	private Gson gson;
+	private Genson genson;
 
 	public JSONUtil() {
-		this.gson = new Gson();
+		this.genson = new Genson();
 	}
 
-	public String getJSONForObject(Object obj) {
-		return gson.toJson(obj);
+	public String getGensonForObject(Object obj) {
+		return genson.serialize(obj);
 	}
 
-	public <T> T getObjectForJSON(String jsonString, Class<T> clazz) {
-		
-		return gson.fromJson(jsonString, clazz);
+	public <T> T getObjectForGenson(String jsonString, Class<T> clazz) {
+
+		return genson.deserialize(jsonString, clazz);
 	}
 
 }
