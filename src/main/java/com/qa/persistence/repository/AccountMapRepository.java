@@ -2,12 +2,15 @@ package com.qa.persistence.repository;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
+import java.util.stream.Collectors;
 
 import javax.management.Query;
 
 import com.qa.persistence.domain.Account;
+import com.qa.persistence.domain.Movie;
 import com.qa.util.*;
 
 public class AccountMapRepository implements AccountRepository {
@@ -39,6 +42,19 @@ public class AccountMapRepository implements AccountRepository {
 		Account aAccount = util.getObjectForGenson(account, Account.class);
 		accountMap.replace(id, aAccount);
 		return "Account has been updated";
+	}
+
+	public int cycleAccount(Long id, String account, String firstName) {
+		Account aAccount = new Account();
+		aAccount.setFirstName("john");		 
+		id++;
+		accountMap.values().contains(firstName); 
+		
+		if (firstName)
+		
+		
+		return util.getGensonForObject(accountMap.values());
+		
 	}
 
 }
