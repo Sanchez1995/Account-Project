@@ -4,14 +4,18 @@ public class Account {
 	private String firstName;
 	private String lastName;
 	private Long id;
-	private String account;
-
-	public Account(String firstName, String lastName, Long id, String account) {
+	private String accountNum;
+	
+	public Account() { 
+		
+	}
+	
+	public Account(String firstName, String lastName, Long id, String accountNum) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.account = account;
+		this.accountNum = accountNum;
 	}
 
 	public String getFirstName() {
@@ -38,12 +42,12 @@ public class Account {
 		this.id = id;
 	}
 
-	public String getAccount() {
-		return account;
+	public String getAccountNum() {
+		return accountNum;
 	}
 
-	public void setAccount(String account) {
-		this.account = account;
+	public void setAccountNum(String accountNum) {
+		this.accountNum = accountNum;
 	}
 
 	// A comment
